@@ -40,7 +40,6 @@
     slint-lsp
     terraform-ls
     hyprls
-    helix-gpt
     nix-ai-tools.copilot-language-server
     fish-lsp
     wasm-language-tools
