@@ -41,6 +41,7 @@
     terraform-ls
     hyprls
     nix-ai-tools.copilot-language-server
+    lsp-ai
     fish-lsp
     wasm-language-tools
   ];  

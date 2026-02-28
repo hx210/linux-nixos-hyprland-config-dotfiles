@@ -25,7 +25,7 @@
   };
 
   services.n8n = {
-    enable = true;
+    enable = false;
   };
 
   systemd.services.n8n = {
@@ -34,15 +34,18 @@
     };
   };
 
-  # services.open-webui = {
-  #   enable = true;
-  #   port = 8888;
-  #   host = "127.0.0.1";
-  # };
+  services.open-webui = {
+    enable = false;
+    port = 8888;
+    host = "127.0.0.1";
+  };
   
   environment.systemPackages = with pkgs; [
     nix-ai-tools.backlog-md
-    nix-ai-tools.beads
+    nix-ai-tools.beads-rust
+    nix-ai-tools.tuicr
+    nix-ai-tools.mcporter
+    nix-ai-tools.rtk
 
     oterm
     # alpaca
@@ -51,6 +54,8 @@
     fabric-ai
 
     # aider-chat
+    nix-ai-tools.pi
+    nix-ai-tools.ccusage-pi
     nix-ai-tools.ccusage-opencode
     nix-ai-tools.opencode
     nix-ai-tools.openspec
