@@ -10,7 +10,7 @@
     lld
     lldb
     musl
-    jdk11
+    jdk17
 
     dioxus-cli
     trunk
