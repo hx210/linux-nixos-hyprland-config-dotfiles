@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  nixpkgs.config = {
+    android_sdk.accept_license = true;
+  };
+
   environment.systemPackages = with pkgs; [
     slack
     google-cloud-sdk
@@ -13,7 +17,9 @@
     redli
     postgresql_18
     pspg
-    android-studio
+    androidenv.androidPkgs.androidsdk
+    androidenv.androidPkgs.emulator
+    androidenv.androidPkgs.platform-tools
     terragrunt
     terraform
   ];
