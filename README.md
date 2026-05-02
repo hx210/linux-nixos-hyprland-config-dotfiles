@@ -148,7 +148,7 @@ And many other useful utilities. The full list can be found in the system config
 > [!IMPORTANT]
 > Also, for security reasons, ensure all files in the `/etc/nixos` directory are owned by **root**. If not, change ownership using the command: `sudo chown -R root:root /etc/nixos`.
 
-8. Run the command `sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#your-hostname --upgrade` or `nswitchu`. If you chose first command, replace `your-hostname` with your hostname before running the command; by default, hostname is set to `isitreal-laptop`.
+8. Run the command `sudo nix flake update --flake /etc/nixos; and sudo nixos-rebuild switch --flake /etc/nixos#your-hostname` or `nswitchu`. If you chose first command, replace `your-hostname` with your hostname before running the command; by default, hostname is set to `isitreal-laptop`.
 9. Post-installation configuration:
 
  - Import GNOME settings along with the theme by executing the following command: `dconf load / < home/.config/gnome_settings_backup.dconf`. Additionally, you can use tools like **gnome-tweaks** or **themechanger** to fine-tune specific theme preferences to your liking.

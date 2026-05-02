@@ -3,14 +3,19 @@
 
   inputs = {
       nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      systems.url = "github:nix-systems/x86_64-linux";
       rust-overlay.url = "github:oxalica/rust-overlay";
       wezterm.url = "github:wez/wezterm?dir=nix";
+      wezterm.inputs.flake-utils.inputs.systems.follows = "systems";
       nix-ai-tools.url = "github:numtide/nix-ai-tools";
+      nix-ai-tools.inputs.systems.follows = "systems";
+      nix-ai-tools.inputs.blueprint.inputs.systems.follows = "systems";
   };
 
   outputs = { nixpkgs, ... } @ inputs:
   {
     nixosConfigurations.isitreal-laptop = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
