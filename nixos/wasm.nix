@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     wasmedge
     # wasmer
-    lunatic
     wasmi
     wrangler
     fermyon-spin
