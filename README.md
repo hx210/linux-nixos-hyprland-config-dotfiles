@@ -138,7 +138,7 @@ tailscale status
 > Failure to configure USBGuard appropriately may result in the inability to connect any USB devices to your machine. If needed, you can also disable USBGuard altogether by setting `services.usbguard.enable` to `false` in the configuration:`services.usbguard.enable = false;`. This step ensures that USBGuard is not actively blocking any USB devices.
 
 > [!IMPORTANT]
-> Remember to update the monitor settings in the Hyprland configuration file located at `home/.config/hypr/hyprland.conf`.
+> Remember to update the monitor settings in the Hyprland configuration file located at `home/.config/hypr/hyprland.lua`.
 
 > [!IMPORTANT]
 > Also, important: If you use disk encryption with LUKS and want to use encrypted swap, you need to enable swap on LUKS. This is usually auto-generated in `/etc/nixos/configuration.nix` as the `boot.initrd.luks.devices."luks-...".device = "/dev/disk/by-uuid/...";` code block, if you set this option up during the NixOS installation process. You can simply copy this snippet to either `nixos/swap.nix`, `nixos/hardware-configuration.nix`, or `nixos/configuration.nix` (Personally, I prefer to copy it to `hardware-configuration.nix`).
@@ -252,7 +252,7 @@ tailscale status
 | SUPER + ]              | Player next track           |
 | SUPER + [              | Player previous track       |
 
-You can find all other keybindings in `/home/.config/hypr/hyprland.conf` in the bind section. All system fish scripts are located at `/home/.config/fish/functions` directory.
+You can find all other keybindings in `/home/.config/hypr/hyprland.lua` in the bind section. All system fish scripts are located at `/home/.config/fish/functions` directory.
 
 ## 🐟 Useful aliases in Fish Shell
 
