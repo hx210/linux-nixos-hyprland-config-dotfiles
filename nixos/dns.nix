@@ -2,10 +2,16 @@
 
 {
   # Enable Encrypted DNS
+  # Mullvad supplies tunnel DNS through systemd-resolved; otherwise it forwards to DNSCrypt.
+  # Disable public fallback and LAN discovery to prevent DNS bypasses and multicast name leakage.
   services.resolved = {
     enable = true;
-    # Never fall back to systemd-resolved's compiled-in public resolvers.
-    settings.Resolve.FallbackDNS = [ ];
+    settings.Resolve = {
+      # Never fall back to systemd-resolved's compiled-in public resolvers.
+      FallbackDNS = [ ];
+      LLMNR = false;
+      MulticastDNS = false;
+    };
   };
 
   networking = {
