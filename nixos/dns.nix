@@ -2,20 +2,20 @@
 
 {
   # Enable Encrypted DNS
+  services.resolved = {
+    enable = true;
+    # Never fall back to systemd-resolved's compiled-in public resolvers.
+    settings.Resolve.FallbackDNS = [ ];
+  };
+
   networking = {
-    nameservers = [ "127.0.0.1" "[::1]" ];
+    nameservers = [ "127.0.0.1" "::1" ];
     # If using dhcpcd:
     dhcpcd.enable = false; # disable, because enabled by default
     dhcpcd.extraConfig = "nohook resolv.conf";
 
-    # If using NetworkManager:
-    networkmanager.dns = "none";
-
-    # If using resolvconf:
-    resolvconf = {
-      enable = true; # FIXME remember to delete /etc/resolv.conf if you disable `resolvconf`
-      useLocalResolver = true;
-    };
+    # systemd-resolved owns /etc/resolv.conf and lets Mullvad set tunnel DNS.
+    resolvconf.enable = false;
 
     # If using iwd:
     wireless.iwd.settings.Network.NameResolvingService = "none";
