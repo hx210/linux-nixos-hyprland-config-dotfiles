@@ -8,7 +8,6 @@
     implementation = "broker";
     packages = with pkgs; [
       xfconf
-      gnome2.GConf
     ];
   };
   services.mpd.enable = true;

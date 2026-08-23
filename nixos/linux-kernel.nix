@@ -5,7 +5,7 @@
   security.forcePageTableIsolation = true;
   # security.lockKernelModules = true;
   # security.protectKernelImage = true;
-  security.unprivilegedUsernsClone = true;
+  boot.kernel.sysctl."user.max_user_namespaces" = 255897;
   security.virtualisation.flushL1DataCache = "cond";
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
   boot.kernelParams = [ 
