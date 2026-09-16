@@ -57,7 +57,7 @@
     # nix-ai-tools.pi
     # nix-ai-tools.ccusage-pi
     nix-ai-tools.ccusage
-    nix-ai-tools.opencode
+    nix-ai-tools.opencode2
     nix-ai-tools.openspec
     nix-ai-tools.openskills
     # nix-ai-tools.codex
